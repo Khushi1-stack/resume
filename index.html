@@ -9,63 +9,75 @@
 </head>
 <body>
 
-  <!-- Dark Mode Toggle -->
-  <button id="darkToggle" class="top-left">🌙 Dark Mode</button>
-
-  <!-- Animated Background -->
   <div id="particles-js"></div>
 
   <div class="container">
+    <button id="darkToggle" class="top-left" aria-label="Toggle dark mode">🌙 Dark Mode</button>
 
     <header class="fade-in">
       <h1>Khushi Kandhani</h1>
       <p class="tagline">BSCS Student | Aspiring Software Developer | Passionate Learner</p>
     </header>
 
-    <section class="fade-in">
-      <h2>About Me</h2>
-      <p>I’m a 5th-semester BSCS student with a solid foundation in Java, OOP, Data Structures, and SQL. I’ve started working with backend technologies like Node.js and REST APIs, and I’m actively building my full-stack development skills through hands-on projects. I enjoy solving real-world problems through code and continuously aim to improve both my technical and problem-solving abilities.</p>
-    </section>
+    <main>
+      <section class="fade-in">
+        <h2>About Me</h2>
+        <p>I’m a 5th-semester BSCS student with a solid foundation in Java, OOP, Data Structures, and SQL. I’ve started working with backend technologies like Node.js and REST APIs, and I’m actively building my full-stack development skills through hands-on projects. I enjoy solving real-world problems through code and continuously aim to improve both my technical and problem-solving abilities.</p>
+      </section>
 
-    <section class="fade-in">
-      <h2>Education</h2>
-      <p><strong>BS in Computer Science</strong><br />
+      <section class="fade-in">
+        <h2>Education</h2>
+        <p><strong>BS in Computer Science</strong><br />
         SZABIST University, Karachi<br />
         2023 – Present</p>
-    </section>
+      </section>
 
-    <section class="fade-in">
-      <h2>Skills</h2>
-      <ul class="skills">
-        <li>HTML, CSS, JavaScript</li>
-        <li>C, Java, Data Structures & Algorithms</li>
-        <li>PostgreSQL, Git, REST API</li>
-        <li>Linux Basics, Command Line</li>
-      </ul>
-    </section>
+      <section class="fade-in">
+        <h2>Skills</h2>
+        <ul class="skills">
+          <li>HTML, CSS, JavaScript</li>
+          <li>C, Java, Data Structures & Algorithms</li>
+          <li>PostgreSQL, Git, REST API</li>
+          <li>Linux Basics, Command Line</li>
+        </ul>
+      </section>
 
-    <section class="fade-in">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>Portfolio Website</strong> – A personal portfolio showcasing my projects (HTML/CSS/JS)</li>
-        <li><strong>Student Probation Tracker</strong> – SQL + Node.js project for academic analytics</li>
-        <li><strong>DSA Visualizer</strong> – Visual tool to understand data structures in Java</li>
-      </ul>
-    </section>
+      <section class="fade-in">
+        <h2>Projects</h2>
+        <ul>
+          <li><strong>Portfolio Website</strong> – A personal portfolio showcasing my projects (HTML/CSS/JS)</li>
+          <li><strong>Student Probation Tracker</strong> – SQL + Node.js project for academic analytics</li>
+          <li><strong>DSA Visualizer</strong> – Visual tool to understand data structures in Java</li>
+        </ul>
+      </section>
 
-    <section class="fade-in contact">
-      <h2>Contact</h2>
-      <ul>
-        <li>Email: <a href="mailto:khushikandhani07@gmail.com">khushikandhani07@gmail.com</a></li>
-        <li>LinkedIn: <a href="https://www.linkedin.com/in/khushi-kandhani-4b03522ab" target="_blank">LinkedIn</a></li>
-        <li>GitHub: <a href="https://github.com/khushi-kandhani" target="_blank">GitHub</a></li>
-      </ul>
-    </section>
-    <section class="fade-in resume-download">
-  <a href="Khushi_Kandhani_Resume.pdf" download class="download-btn">📄 Download Resume</a>
-</section>
+      <section class="fade-in contact">
+        <h2>Contact</h2>
+        <ul>
+          <li>Email: <a href="mailto:khushikandhani07@gmail.com">khushikandhani07@gmail.com</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/khushi-kandhani-4b03522ab" target="_blank">LinkedIn</a></li>
+          <li>GitHub: <a href="https://github.com/khushi-kandhani" target="_blank">GitHub</a></li>
+        </ul>
+      </section>
 
+      <section class="fade-in resume-download">
+        <a href="Khushi_Kandhani_Resume.pdf" download class="download-btn" aria-label="Download Resume">📄 Download Resume</a>
+      </section>
 
+      <section class="fade-in" id="bubble-sort-section">
+        <h2>Live DSA Demo: Bubble Sort Visualizer</h2>
+        <form onsubmit="startSort(); return false;">
+          <input type="text" id="inputArray" placeholder="Enter numbers (e.g., 5, 3, 9)" aria-label="Enter numbers for sorting" />
+          <button type="submit">Sort</button>
+        </form>
+        <div id="bars-container"></div>
+        <p id="sorted-output" class="sorted-text"></p>
+      </section>
+    </main>
+
+    <footer class="fade-in">
+      <p>Made with 💻 & ❤️</p>
+    </footer>
   </div>
 
   <script src="script.js"></script>

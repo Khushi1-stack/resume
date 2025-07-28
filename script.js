@@ -82,6 +82,60 @@ document.addEventListener("DOMContentLoaded", function () {
     "retina_detect": true
   });
 });
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function startSort() {
+  const input = document.getElementById("inputArray").value;
+  let arr = input.split(',').map(Number).filter(n => !isNaN(n));
+  if (arr.length === 0) {
+    alert("Please enter a valid list of numbers.");
+    return;
+  }
+
+  const container = document.getElementById("bars-container");
+  container.innerHTML = '';
+
+  // Create bars
+  arr.forEach((value, idx) => {
+    const bar = document.createElement("div");
+    bar.classList.add("bar");
+    bar.style.height = `${value * 3}px`;
+    bar.dataset.value = value;
+    container.appendChild(bar);
+  });
+
+  const bars = document.querySelectorAll(".bar");
+
+  // Bubble Sort with animation
+  for (let i = 0; i < bars.length; i++) {
+    for (let j = 0; j < bars.length - i - 1; j++) {
+      bars[j].classList.add("highlight");
+      bars[j + 1].classList.add("highlight");
+
+      await sleep(400);
+
+      const val1 = parseInt(bars[j].dataset.value);
+      const val2 = parseInt(bars[j + 1].dataset.value);
+
+      if (val1 > val2) {
+        // Swap heights and values
+        [bars[j].style.height, bars[j + 1].style.height] = [bars[j + 1].style.height, bars[j].style.height];
+        [bars[j].dataset.value, bars[j + 1].dataset.value] = [bars[j + 1].dataset.value, bars[j].dataset.value];
+      }
+
+      bars[j].classList.remove("highlight");
+      bars[j + 1].classList.remove("highlight");
+    }
+  }
+}
+// After sorting ends, collect the values from the bars
+let sorted = [];
+document.querySelectorAll(".bar").forEach(bar => {
+  sorted.push(parseInt(bar.dataset.value));
+});
+document.getElementById("sorted-output").innerText = "Sorted: " + sorted.join(", ");
 
 function forceDownload(e) {
   e.preventDefault();
