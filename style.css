@@ -15,6 +15,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Background gradient animation */
 @keyframes gradientBG {
   0%, 100% {
     background-position: 0% 50%;
@@ -148,6 +149,7 @@ body.dark-mode #darkToggle {
   color: #fff;
 }
 
+/* Fade-in animation */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -159,6 +161,7 @@ body.dark-mode #darkToggle {
   transform: translateY(0);
 }
 
+/* Resume download button */
 .resume-download {
   display: flex;
   justify-content: center;
@@ -182,6 +185,7 @@ body.dark-mode #darkToggle {
   transform: scale(1.05);
 }
 
+/* Bubble Sort Visualizer */
 #bubble-sort-section {
   margin-top: 40px;
   text-align: center;
